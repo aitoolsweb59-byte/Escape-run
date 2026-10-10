@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; user-select: none; }
+body { font-family: 'Montserrat', sans-serif; background: #050505; color: #fff; overflow: hidden; }
+
+#game-container { position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1; }
+
+.ui-layer { position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center; pointer-events: none; }
+.ui-layer > * { pointer-events: auto; }
+.hidden { display: none !important; }
+
+.glass-panel { background: rgba(10, 10, 15, 0.85); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); padding: 2rem; border-radius: 12px; text-align: center; max-width: 400px; width: 90%; }
+h1 { font-weight: 800; font-size: 2rem; margin-bottom: 0.5rem; letter-spacing: 2px; text-transform: uppercase; }
+.tagline { color: #888; font-size: 0.9rem; margin-bottom: 2rem; }
+.highlight { color: #00ffcc; font-size: 2.5rem; letter-spacing: 5px; }
+
+input { width: 100%; padding: 12px; margin-bottom: 1rem; background: rgba(0,0,0,0.5); border: 1px solid #333; color: white; border-radius: 6px; font-family: inherit; text-align: center; font-size: 1.1rem; }
+button { width: 100%; padding: 14px; border: none; border-radius: 6px; font-weight: 800; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: transform 0.1s; }
+button:active { transform: scale(0.96); }
+.primary-btn { background: #00ffcc; color: #000; margin-bottom: 1rem; }
+.secondary-btn { background: #333; color: #fff; }
+.join-group { display: flex; gap: 10px; margin-top: 1rem; }
+.join-group input { margin: 0; }
+
+.roster-container { text-align: left; margin: 2rem 0; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 6px; min-height: 150px; }
+.roster-container h3 { border-bottom: 1px solid #333; padding-bottom: 0.5rem; margin-bottom: 0.5rem; }
+#roster-list { list-style: none; }
+#roster-list li { display: flex; justify-content: space-between; padding: 0.5rem 0; font-size: 0.9rem; }
+.role-badge { background: #444; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; }
+.role-badge.runner { background: #00ffcc; color: #000; }
+.role-badge.chaser { background: #ff3366; color: #fff; }
+
+/* HUD */
+.hud-top { position: absolute; top: 20px; width: 100%; display: flex; justify-content: space-between; padding: 0 20px; font-size: 1.5rem; font-weight: 800; text-shadow: 2px 2px 4px #000; }
+.stamina-container { position: absolute; bottom: 120px; width: 200px; height: 10px; background: rgba(0,0,0,0.5); border-radius: 5px; overflow: hidden; }
+#stamina-bar { width: 100%; height: 100%; background: #00ffcc; transition: width 0.1s linear; }
+
+/* Mobile Controls */
+.mobile-only { position: absolute; bottom: 20px; width: 100%; padding: 0 20px; display: flex; justify-content: space-between; align-items: flex-end; }
+.ctrl-btn { width: 60px; height: 60px; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); border-radius: 50%; color: white; font-size: 1.5rem; backdrop-filter: blur(5px); }
+.center-ctrls { display: flex; flex-direction: column; gap: 10px; }
+.action-btn { width: 80px; height: 50px; border-radius: 10px; font-size: 1rem; }
+@media (min-width: 768px) { .mobile-only { display: none !important; } }
